@@ -1,0 +1,37 @@
+JavaScript 除錯工具
+    瀏覽器啟用除錯工具一般是按下 F12 鍵，並在除錯選單中選擇 "Console" 。
+
+    console.log() 方法
+    如果瀏覽器支援除錯，你可以使用 console.log() 方法在除錯視窗上列印 JavaScript 值：
+
+    範例
+    a = 5;
+    b = 6;
+    c = a + b;
+    console.log(c);
+
+設定中斷點
+    在除錯視窗中，你可以設定 JavaScript 程式碼的中斷點。
+    在每個中斷點上，都會停止執行 JavaScript 程式碼，以便於我們檢查 JavaScript 變數的值。
+    在檢查完畢後，可以重新執行程式碼（如播放按鈕）。
+
+debugger 關鍵字
+    debugger 關鍵字用於停止執行 JavaScript，並呼叫除錯函式。
+    這個關鍵字與在除錯工具中設定中斷點的效果是一樣的。
+    如果沒有除錯可用，debugger 敘述將無法工作。
+    開啟 debugger ，程式碼在第三行前停止執行。
+    範例
+    var x = 15 * 5;
+    debugger;
+    document.getElementbyId("demo").innerHTML = x;
+
+主要瀏覽器的除錯工具
+    通常，瀏覽器啟用除錯工具一般是按下 F12 鍵，並在除錯選單中選擇 "Console" 。
+
+    各瀏覽器的步驟如下:
+
+    Chrome 瀏覽器
+    開啟瀏覽器。
+    在選單中選擇 "更多工具"。
+    在 "更多工具" 中選擇 "開發者工具"。
+    最後，選擇 Console。

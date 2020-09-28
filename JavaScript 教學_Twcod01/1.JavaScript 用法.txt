@@ -1,0 +1,81 @@
+JavaScript 用法
+    HTML 中的指令碼必須位於 <script> 與 </script> 標籤之間。
+    指令碼可被放置在 HTML 頁面的 <body> 和 <head> 部分中。
+
+<script> 標籤
+    如需在 HTML 頁面中寫入 JavaScript，請使用 <script> 標籤。
+    <script> 和 </script> 會告訴 JavaScript 在何處開始和結束。
+    <script> 和 </script> 之間的程式包含了 JavaScript:
+
+        example:
+        <script>
+        alert("我的第一個 JavaScript");
+        </script>
+
+<body> 中的 JavaScript
+    在本例中，JavaScript 會在頁面載入時向 HTML 的 <body> 寫文字：
+        <!DOCTYPE html>
+        <html>
+        <body>
+        .
+        .
+        <script>
+        document.write("<h1>這是一個標題</h1>");
+        document.write("<p>這是一個段落</p>");
+        </script>
+        .
+        .
+        </body>
+        </html>
+
+<head> 中的 JavaScript 函式
+    在本例中，我們把一個 JavaScript 函式放置到 HTML 頁面的 <head> 部分。
+    該函式會在點選按鈕時被呼叫：
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <script>
+        function myFunction()
+        {
+            document.getElementById("demo").innerHTML="我的第一個 JavaScript 函式";
+        }
+        </script>
+        </head>
+        <body>
+        <h1>我的 Web 頁面</h1>
+        <p id="demo">一個段落</p>
+        <button type="button" onclick="myFunction()">嘗試一下</button>
+        </body>
+        </html>
+
+<body> 中的 JavaScript 函式
+    在本例中，我們把一個 JavaScript 函式放置到 HTML 頁面的 <body> 部分。
+    該函式會在點選按鈕時被呼叫：
+
+        <!DOCTYPE html>
+        <html>
+        <body>
+        <h1>我的 Web 頁面</h1>
+        <p id="demo">一個段落</p>
+        <button type="button" onclick="myFunction()">嘗試一下</button>
+        <script>
+        function myFunction()
+        {
+            document.getElementById("demo").innerHTML="我的第一個 JavaScript 函式";
+        }
+        </script>
+        </body>
+        </html>
+
+外部的 JavaScript
+    也可以把指令碼儲存到外部檔案中。外部檔案通常包含被多個網頁使用的程式碼。
+    外部 JavaScript 檔案的檔案副檔名是 .js。
+    如需使用外部檔案，請在 <script> 標籤的 "src" 屬性中設定該 .js 檔案：
+
+        <!DOCTYPE html>
+        <html>
+        <body>
+        <script src="myScript.js"></script>
+        </body>
+        </html>

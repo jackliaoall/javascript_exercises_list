@@ -1,0 +1,115 @@
+JSON.parse()
+    JSON 通常用於與伺服端交換資料。
+
+    在接收伺服器資料時一般是字串。
+
+    我們可以使用 JSON.parse() 方法將資料轉換為 JavaScript 物件。
+
+    語法
+    JSON.parse(text[, reviver])
+    引數說明：
+
+    text:必需， 一個有效的 JSON 字串。
+    reviver: 可選，一個轉換結果的函式， 將為物件的每個成員呼叫此函式。
+
+JSON 解析範例
+    例如我們從伺服器接收了以下資料：
+
+    { "name":"twcode01", "alexa":10000, "site":"www.twcode01.com" }
+    我們使用 JSON.parse() 方法處理以上資料，將其轉換為 JavaScript 物件：
+
+    var obj = JSON.parse('{ "name":"twcode01", "alexa":10000, "site":"www.twcode01.com" }');
+    解析前要確保你的資料是標準的 JSON 格式，否則會解析出錯。
+
+    你可以使用我們的線上工具檢測：https://www.twcode01.com/front-end/53。
+
+    解析完成後，我們就可以在網頁上使用 JSON 資料了：
+
+    範例
+    <p id="demo"></p>
+    
+    <script>
+    var obj = JSON.parse('{ "name":"twcode01", "alexa":10000, "site":"www.twcode01.com" }');
+    document.getElementById("demo").innerHTML = obj.name + "：" + obj.site;
+    </script>
+
+從伺服端接收 JSON 資料
+    我們可以使用 AJAX 從伺服器請求 JSON 資料，並解析為 JavaScript 物件。
+
+    範例
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+            document.getElementById("demo").innerHTML = myObj.name;
+        }
+    };
+    xmlhttp.open("GET", "/try/ajax/json_demo.txt", true);
+    xmlhttp.send();
+
+    檢視伺服端資料： json_demo.txt
+
+從伺服端接收陣列的 JSON 資料
+    如果從伺服端接收的是陣列的 JSON 資料，則 JSON.parse 會將其轉換為 JavaScript 陣列：
+
+    範例
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            myArr = JSON.parse(this.responseText);
+            document.getElementById("demo").innerHTML = myArr[1];
+        }
+    };
+    xmlhttp.open("GET", "/try/ajax/json_demo_array.txt", true);
+    xmlhttp.send();
+
+    檢視伺服端資料： json_demo_array.txt
+
+異常
+    解析資料
+    JSON 不能儲存 Date 物件。
+
+    如果你需要儲存 Date 物件，需要將其轉換為字串。
+
+    之後再將字串轉換為 Date 物件。
+
+    範例
+    var text = '{ "name":"Twcode01", "initDate":"2013-12-14", "site":"www.twcode01.com"}';
+    var obj = JSON.parse(text);
+    obj.initDate = new Date(obj.initDate);
+    
+    document.getElementById("demo").innerHTML = obj.name + "建立日期: " + obj.initDate;
+
+    我們可以啟用 JSON.parse 的第二個引數 reviver，一個轉換結果的函式，物件的每個成員呼叫此函式。
+
+    範例
+    var text = '{ "name":"Twcode01", "initDate":"2013-12-14", "site":"www.twcode01.com"}';
+    var obj = JSON.parse(text, function (key, value) {
+        if (key == "initDate") {
+            return new Date(value);
+        } else {
+            return value;
+    }});
+    
+    document.getElementById("demo").innerHTML = obj.name + "建立日期：" + obj.initDate;
+
+解析函式
+    JSON 不允許包含函式，但你可以將函式作為字串儲存，之後再將字串轉換為函式。
+
+    範例
+    var text = '{ "name":"Twcode01", "alexa":"function () {return 10000;}", "site":"www.twcode01.com"}';
+    var obj = JSON.parse(text);
+    obj.alexa = eval("(" + obj.alexa + ")");
+    
+    document.getElementById("demo").innerHTML = obj.name + " Alexa 排名：" + obj.alexa();
+
+    不建議在 JSON 中使用函式。
+
+瀏覽器支援
+    主流瀏覽器都支援 JSON.parse() 函式：
+
+    Firefox 3.5
+    Internet Explorer 8
+    Chrome
+    Opera 10
+    Safari 4

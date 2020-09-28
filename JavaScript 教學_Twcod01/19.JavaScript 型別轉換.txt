@@ -1,0 +1,21 @@
+JavaScript 型別轉換
+    換為數值， String() 轉換為字串， Boolean() 轉化為布林值。
+
+JavaScript 資料型態
+    在 JavaScript 中有 6 種不同的資料型態：
+
+    string
+    number
+    boolean
+    object
+    function
+    symbol
+    3 種物件型別：
+
+    Object
+    Date
+    Array
+    2 個不包含任何值的資料型態：
+
+    null
+    undefined

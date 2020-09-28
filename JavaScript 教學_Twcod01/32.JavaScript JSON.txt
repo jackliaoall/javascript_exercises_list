@@ -1,0 +1,56 @@
+JavaScript JSON
+    JSON 是用於儲存和傳輸資料的格式。
+    JSON 通常用於伺服端向網頁傳遞資料 。
+
+什麼是 JSON?
+    JSON 英文全稱 JavaScript Object Notation
+    JSON 是一種輕量級的資料交換格式。
+    JSON是獨立的語言 *
+    JSON 易於理解。
+
+JSON 資料 - 一個名稱對應一個值
+    JSON 資料格式為 鍵/值 對，就像 JavaScript 物件屬性。
+    鍵/值對包括欄位名稱（在雙引號中），後面一個冒號，然後是值：
+    "name":"Twcode01"
+
+JSON 物件
+    JSON 物件儲存在大括弧內。
+    就像在 JavaScript 中, 物件可以儲存多個 鍵/值 對：
+    {"name":"Twcode01", "url":"www.twcode01.com"}
+
+JSON 陣列
+    JSON 陣列儲存在中括弧內。
+    就像在 JavaScript 中, 陣列可以包含物件：
+    "sites":[
+        {"name":"Twcode01", "url":"www.twcode01.com"}, 
+        {"name":"Google", "url":"www.google.com"},
+        {"name":"Taobao", "url":"www.taobao.com"}
+    ]
+
+JSON 字串轉換為 JavaScript 物件
+    通常我們從伺服器中讀取 JSON 資料，並在網頁中顯示資料。
+    簡單起見，我們網頁中直接設定 JSON 字串 (你還可以閱讀我們的 JSON 教學):
+    首先，建立 JavaScript 字串，字元串為 JSON 格式的資料：
+
+    var text = '{ "sites" : [' +
+    '{ "name":"Twcode01" , "url":"www.twcode01.com" },' +
+    '{ "name":"Google" , "url":"www.google.com" },' +
+    '{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+    然後，使用 JavaScript 內建函式 JSON.parse() 將字串轉換為 JavaScript 物件:
+
+    var obj = JSON.parse(text);
+    最後，在你的頁面中使用新的 JavaScript 物件：
+
+    範例
+    var text = '{ "sites" : [' +
+        '{ "name":"Twcode01" , "url":"www.twcode01.com" },' +
+        '{ "name":"Google" , "url":"www.google.com" },' +
+        '{ "name":"Taobao" , "url":"www.taobao.com" } ]}';
+        
+    obj = JSON.parse(text);
+    document.getElementById("demo").innerHTML = obj.sites[1].name + " " + obj.sites[1].url;
+
+相關函式
+    函式	            描述
+    JSON.parse()	    用於將一個 JSON 字串轉換為 JavaScript 物件。
+    JSON.stringify()	用於將 JavaScript 值轉換為 JSON 字串。

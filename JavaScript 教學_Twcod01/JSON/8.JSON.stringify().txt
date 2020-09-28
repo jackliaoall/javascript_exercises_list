@@ -1,0 +1,96 @@
+JSON.stringify()
+    JSON 通常用於與伺服端交換資料。
+
+    在向伺服器發送資料時一般是字串。
+
+    我們可以使用 JSON.stringify() 方法將 JavaScript 物件轉換為字串。
+
+    語法
+    JSON.stringify(value[, replacer[, space]])
+    引數說明：
+
+    value:
+    必需， 要轉換的 JavaScript 值（通常為物件或陣列）。
+
+    replacer:
+    可選。用於轉換結果的函式或陣列。
+
+    如果 replacer 為函式，則 JSON.stringify 將呼叫該函式，並傳入每個成員的鍵和值。使用回傳值而不是原始值。如果此函式回傳 undefined，則排除成員。根物件的鍵是一個空字串：""。
+
+    如果 replacer 是一個陣列，則僅轉換該陣列中具有鍵值的成員。成員的轉換順序與鍵在陣列中的順序一樣。當 value 引數也為陣列時，將忽略 replacer 陣列。
+
+    space:
+    可選，文字新增縮進、空白和換行符，如果 space 是一個數值，則回傳值文字在每個級別縮進指定數目的空白，如果 space 大於 10，則文字縮進 10 個空白。space 也可以使用非數值，如：\t。
+
+JavaScript 物件轉換
+    例如我們向伺服器發送以下資料：
+
+    var obj = { "name":"twcode01", "alexa":10000, "site":"www.twcode01.com"};
+    我們使用 JSON.stringify() 方法處理以上資料，將其轉換為字串：
+
+    var myJSON = JSON.stringify(obj);
+    myJSON 為字串。
+
+    我們可以將 myJSON 發送到伺服器：
+
+    範例
+    var obj = { "name":"twcode01", "alexa":10000, "site":"www.twcode01.com"};
+    var myJSON = JSON.stringify(obj);
+    document.getElementById("demo").innerHTML = myJSON;
+
+JavaScript 陣列轉換
+    我們也可以將 JavaScript 陣列轉換為 JSON 字串：
+
+    範例
+    var arr = [ "Google", "Twcode01", "Taobao", "Facebook" ];
+    var myJSON = JSON.stringify(arr);
+    myJSON 為字串。
+
+    我們可以將 myJSON 發送到伺服器：
+
+    範例
+    var arr = [ "Google", "Twcode01", "Taobao", "Facebook" ];
+    var myJSON = JSON.stringify(arr);
+    document.getElementById("demo").innerHTML = myJSON;
+
+異常
+    解析資料
+    JSON 不能儲存 Date 物件。
+
+    JSON.stringify() 會將所有日期轉換為字串。
+
+    範例
+    var obj = { "name":"Twcode01", "initDate":new Date(), "site":"www.twcode01.com"};
+    var myJSON = JSON.stringify(obj);
+    document.getElementById("demo").innerHTML = myJSON;
+
+    之後你可以再將字串轉換為 Date 物件。
+
+解析函式
+    JSON 不允許包含函式，JSON.stringify() 會刪除 JavaScript 物件的函式，包括 key 和 value。
+
+    範例
+    var obj = { "name":"Twcode01", "alexa":function () {return 10000;}, "site":"www.twcode01.com"};
+    var myJSON = JSON.stringify(obj);
+    
+    document.getElementById("demo").innerHTML = myJSON;
+
+    我們可以在執行 JSON.stringify() 函式前將函式轉換為字串來避免以上問題的發生：
+
+    範例
+    var obj = { "name":"Twcode01", "alexa":function () {return 10000;}, "site":"www.twcode01.com"};
+    obj.alexa = obj.alexa.toString();
+    var myJSON = JSON.stringify(obj);
+    
+    document.getElementById("demo").innerHTML = myJSON;
+
+    不建議在 JSON 中使用函式。
+
+瀏覽器支援
+    主流瀏覽器都支援 JSON.stringify() 函式：
+
+    Firefox 3.5
+    Internet Explorer 8
+    Chrome
+    Opera 10
+    Safari 4

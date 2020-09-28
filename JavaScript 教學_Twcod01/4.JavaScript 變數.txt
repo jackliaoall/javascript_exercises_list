@@ -1,0 +1,27 @@
+變數是用於儲存信息的"容器"。
+    範例
+    var x=5;
+    var y=6;
+    var z=x+y;
+
+JavaScript 資料型態
+    var pi=3.14;
+    var person="John Doe";
+    var answer='Yes I am!';
+
+Value = undefined
+    在電腦程式中，經常會宣告無值的變數。未使用值來宣告的變數，其值實際上是 undefined。
+    在執行過以下敘述後，變數 carname 的值將是 undefined：
+    var carname;
+
+重新宣告 JavaScript 變數
+    如果重新宣告 JavaScript 變數，該變數的值不會遺失：
+    在以下兩條敘述執行後，變數 carname 的值依然是 "Volvo"：
+    var carname="Volvo";
+    var carname;
+
+JavaScript 算數
+    您可以透過 JavaScript 變數來做算數，使用的是 = 和 + 這類運算子：
+    範例
+    y=5;
+    x=y+2;

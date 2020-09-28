@@ -1,0 +1,87 @@
+JSON 物件
+    物件語法
+    範例
+    { "name":"twcode01", "alexa":10000, "site":null }
+    JSON 物件使用在大括弧({})中書寫。
+
+    物件可以包含多個 key/value（鍵/值）對。
+
+    key 必須是字串，value 可以是合法的 JSON 資料型態（字串, 數值, 物件, 陣列, 布林值或 null）。
+
+    key 和 value 中使用冒號(:)分割。
+
+    每個 key/value 對使用逗號(,)分割。
+
+存取物件值
+    你可以使用點號（.）來存取物件的值：
+
+    範例
+    var myObj, x;
+    myObj = { "name":"twcode01", "alexa":10000, "site":null };
+    x = myObj.name;
+
+    你也可以使用中括弧（[]）來存取物件的值：
+
+    範例
+    var myObj, x;
+    myObj = { "name":"twcode01", "alexa":10000, "site":null };
+    x = myObj["name"];
+
+迴圈物件
+    你可以使用 for-in 來迴圈物件的屬性：
+
+    範例
+    var myObj = { "name":"twcode01", "alexa":10000, "site":null };
+    for (x in myObj) {
+        document.getElementById("demo").innerHTML += x + "<br>";
+    }
+
+    在 for-in 迴圈物件的屬性時，使用中括弧（[]）來存取屬性的值：
+
+    範例
+    var myObj = { "name":"twcode01", "alexa":10000, "site":null };
+    for (x in myObj) {
+        document.getElementById("demo").innerHTML += myObj[x] + "<br>";
+    }
+
+巢狀 JSON 物件
+    JSON 物件中可以包含另外一個 JSON 物件：
+
+    範例
+    myObj = {
+        "name":"twcode01",
+        "alexa":10000,
+        "sites": {
+            "site1":"www.twcode01.com",
+            "site2":"m.twcode01.com",
+            "site3":"www.twcode01.com"
+        }
+    }
+    你可以使用點號(.)或者中括弧([])來存取巢狀的 JSON 物件。
+
+    範例
+    x = myObj.sites.site1;
+    // 或者
+    x = myObj.sites["site1"];
+
+修改值
+    你可以使用點號(.)來修改 JSON 物件的值：
+
+    範例
+    myObj.sites.site1 = "www.google.com";
+
+    你可以使用中括弧([])來修改 JSON 物件的值：
+
+    範例
+    myObj.sites["site1"] = "www.google.com";
+
+刪除物件屬性
+    我們可以使用 delete 關鍵字來刪除 JSON 物件的屬性：
+
+    範例
+    delete myObj.sites.site1;
+
+    你可以使用中括弧([])來刪除 JSON 物件的屬性：
+
+    範例
+    delete myObj.sites["site1"]

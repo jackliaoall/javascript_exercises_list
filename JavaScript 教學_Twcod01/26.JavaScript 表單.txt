@@ -1,0 +1,19 @@
+JavaScript 表單驗證
+    HTML 表單驗證可以透過 JavaScript 來完成。
+    以下例項程式碼用於判斷表單欄位(fname)值是否存在， 如果不存在，就彈出信息，阻止表單提交：
+
+        JavaScript 範例
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+            if (x == null || x == "") {
+                alert("需要輸入名字。");
+                return false;
+            }
+        }
+        以上 JavaScript 程式碼可以透過 HTML 程式碼來呼叫：
+
+        HTML 表單例項
+        <form name="myForm" action="demo_form.php" onsubmit="return validateForm()" method="post">
+        名字: <input type="text" name="fname">
+        <input type="submit" value="提交">
+        </form>

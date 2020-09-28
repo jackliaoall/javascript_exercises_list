@@ -1,0 +1,77 @@
+try 敘述測試程式碼塊的錯誤。
+catch 敘述處理錯誤。
+throw 敘述建立自定義錯誤。
+finally 敘述在 try 和 catch 敘述之後，無論是否有觸發異常，該敘述都會執行。
+
+語法
+    try {
+        ...    //異常的丟擲
+    } catch(e) {
+        ...    //異常的捕獲與處理
+    } finally {
+        ...    //結束處理
+    }
+
+範例
+    var txt=""; 
+    function message() 
+    { 
+        try { 
+            adddlert("Welcome guest!"); 
+        } catch(err) { 
+            txt="本頁有一個錯誤。\n\n"; 
+            txt+="錯誤描述：" + err.message + "\n\n"; 
+            txt+="點選確定繼續。\n\n"; 
+            alert(txt); 
+        } 
+    }
+
+finally 敘述
+    finally 敘述不論之前的 try 和 catch 中是否產生異常都會執行該程式碼塊。
+    範例
+
+    function myFunction() {
+    var message, x;
+    message = document.getElementById("p01");
+    message.innerHTML = "";
+    x = document.getElementById("demo").value;
+    try { 
+        if(x == "") throw "值是空的";
+        if(isNaN(x)) throw "值不是一個數值";
+        x = Number(x);
+        if(x > 10) throw "太大";
+        if(x < 5) throw "太小";
+    }
+    catch(err) {
+        message.innerHTML = "錯誤: " + err + ".";
+    }
+    finally {
+        document.getElementById("demo").value = "";
+    }
+    }
+
+Throw 敘述
+    throw 敘述允許我們建立自定義錯誤。
+    正確的科技術語是：建立或丟擲異常（exception）。
+    如果把 throw 與 try 和 catch 一起使用，那麼您能夠控制程式流，並生成自定義的錯誤訊息。
+
+    範例
+    本例檢測輸入變數的值。如果值是錯誤的，會丟擲一個異常（錯誤）。catch 會捕捉到這個錯誤，並顯示一段自定義的錯誤訊息：
+
+    範例
+    function myFunction() {
+        var message, x;
+        message = document.getElementById("message");
+        message.innerHTML = "";
+        x = document.getElementById("demo").value;
+        try { 
+            if(x == "")  throw "值為空";
+            if(isNaN(x)) throw "不是數值";
+            x = Number(x);
+            if(x < 5)    throw "太小";
+            if(x > 10)   throw "太大";
+        }
+        catch(err) {
+            message.innerHTML = "錯誤: " + err;
+        }
+    }

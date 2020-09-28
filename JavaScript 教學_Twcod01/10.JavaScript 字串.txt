@@ -1,0 +1,75 @@
+JavaScript 字串
+    字串可以儲存一系列字元，如 "John Doe"。
+
+    字串可以是寫入到引號中的任何字元。你可以使用單引號或雙引號：
+
+    範例
+    var carname = "Volvo XC60";
+    var carname = 'Volvo XC60';
+    你可以使用索引位置來存取字串中的每個字元：
+
+    範例
+    var character = carname[7];
+    字串的索引從 0 開始，這意味著第一個字元索引值為 [0],第二個為 [1], 以此類推。
+
+    你可以在字串中使用引號，字串中的引號不要與字串的引號相同:
+
+    範例
+    var answer = "It's alright";
+    var answer = "He is called 'Johnny'";
+    var answer = 'He is called "Johnny"';
+    你也可以在字串新增跳脫字元來使用引號：
+
+    範例
+    var x = 'It\'s alright';
+    var y = "He is called \"Johnny\"";
+
+字串長度
+    可以使用內建屬性 length 來計算字串的長度：
+
+    範例
+    var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var sln = txt.length;
+
+特殊字元
+    下表中列舉了在字串中可以使用跳脫字元轉義的特殊字元：
+
+    程式碼	輸出
+    \'	單引號
+    \"	雙引號
+    \\	反斜杠
+    \n	換行
+    \r	回車
+    \t	tab(製表符)
+    \b	退格符
+    \f	換頁符
+
+字串可以是物件
+    通常， JavaScript 字串是原始值，可以使用字元建立： var firstName = "John"
+
+    但我們也可以使用 new 關鍵字將字串定義為一個物件： var firstName = new String("John")
+
+    範例
+    var x = "John";
+    var y = new String("John");
+    typeof x // 回傳 String
+    typeof y // 回傳 Object
+
+    Note:   不要建立 String 物件。它會拖慢執行速度，並可能產生其他副作用：
+
+    var x = "John";             
+    var y = new String("John");
+    (x === y) // 結果為 false，因為 x 是字串，y 是物件
+
+字串屬性和方法
+    原始值字串，如 "John", 沒有屬性和方法(因為他們不是物件)。
+
+    原始值可以使用 JavaScript 的屬性和方法，因為 JavaScript 在執行方法和屬性時可以把原始值當作物件。
+
+    字串方法我們將在下一章節中介紹。
+
+    字串屬性
+    屬性	描述
+    constructor	回傳建立字串屬性的函式
+    length	回傳字串的長度
+    prototype	允許您向物件新增屬性和方法

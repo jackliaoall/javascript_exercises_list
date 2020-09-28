@@ -1,0 +1,79 @@
+JavaScript 輸出
+    JavaScript 沒有任何列印或者輸出的函式。
+
+JavaScript 顯示資料
+    JavaScript 可以透過不同的方式來輸出資料：
+        使用 window.alert() 彈出警告框。
+        使用 document.write() 方法將內容寫到 HTML 檔案中。
+        使用 innerHTML 寫入到 HTML 元素。
+        使用 console.log() 寫入到瀏覽器的主控臺。
+
+(1)使用 window.alert()
+你可以彈出警告框來顯示資料：
+    <!DOCTYPE html>
+    <html>
+    <body>
+
+    <h1>我的第一個頁面</h1>
+    <p>我的第一個段落。</p>
+
+    <script>
+    window.alert(5 + 6);
+    </script>
+
+    </body>
+    </html>
+
+(2)操作 HTML 元素
+如需從 JavaScript 存取某個 HTML 元素，您可以使用 document.getElementById(id) 方法。
+請使用 "id" 屬性來標識 HTML 元素，並 innerHTML 來取得或寫入元素內容：
+    <!DOCTYPE html>
+    <html>
+    <body>
+
+    <h1>我的第一個 Web 頁面</h1>
+
+    <p id="demo">我的第一個段落</p>
+
+    <script>
+    document.getElementById("demo").innerHTML = "段落已修改。";
+    </script>
+
+    </body>
+    </html>
+
+(3)寫到 HTML 檔案
+出於測試目的，您可以將JavaScript直接寫在HTML 檔案中
+    <!DOCTYPE html>
+    <html>
+    <body>
+
+    <h1>我的第一個 Web 頁面</h1>
+
+    <p>我的第一個段落。</p>
+
+    <script>
+    document.write(Date());
+    </script>
+
+    </body>
+    </html>
+
+(4)寫到主控臺
+如果您的瀏覽器支援除錯，你可以使用 console.log() 方法在瀏覽器中顯示 JavaScript 值。
+瀏覽器中使用 F12 來啟用除錯模式， 在除錯視窗中點選 "Console" 選單。
+    <!DOCTYPE html>
+    <html>
+    <body>
+
+    <h1>我的第一個 Web 頁面</h1>
+
+    <script>
+    a = 5;
+    b = 6;
+    c = a + b;
+    console.log(c);
+    </script>
+
+    </body>
+    </html>

@@ -1,0 +1,26 @@
+與 XML 相同之處
+    JSON 是純文字
+    JSON 具有"自我描述性"（人類可讀）
+    JSON 具有層級結構（值中存在值）
+    JSON 可透過 JavaScript 進行解析
+    JSON 資料可使用 AJAX 進行傳輸
+
+與 XML 不同之處
+    沒有結束標籤
+    更短
+    讀寫的速度更快
+    能夠使用內建的 JavaScript eval() 方法進行解析
+    使用陣列
+    不使用保留字
+
+為什麼使用 JSON？
+    對於 AJAX 應用程式來說，JSON 比 XML 更快更易使用：
+
+    使用 XML
+        讀取 XML 檔案
+        使用 XML DOM 來迴圈遍歷檔案
+        讀取值並儲存在變數中
+        
+    使用 JSON
+        讀取 JSON 字串
+        用 eval() 處理 JSON 字串

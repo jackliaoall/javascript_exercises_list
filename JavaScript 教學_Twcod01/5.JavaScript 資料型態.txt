@@ -1,0 +1,89 @@
+JavaScript 資料型態
+    實值型別(基本型別)：字串（String）、數值(Number)、布林(Boolean)、對空（Null）、未定義（Undefined）、Symbol。
+    引用資料型態：物件(Object)、陣列(Array)、函式(Function)。
+
+JavaScript 擁有動態型別
+    JavaScript 擁有動態型別。這意味著相同的變數可用作不同的型別：
+    範例
+    var x;               // x 為 undefined
+    var x = 5;           // 現在 x 為數值
+    var x = "John";      // 現在 x 為字串
+
+JavaScript 字串
+    字串是儲存字元（例如 "Bill Gates"）的變數。
+    字串可以是引號中的任意文字。您可以使用單引號或雙引號：
+
+    範例
+    var carname="Volvo XC60";
+    var carname='Volvo XC60';
+    您可以在字串中使用引號，只要不匹配套件圍字串的引號即可：
+
+    範例
+    var answer="It's alright";
+    var answer="He is called 'Johnny'";
+    var answer='He is called "Johnny"';
+
+JavaScript 數值
+    JavaScript 只有一種數值型別。數值可以帶小數點，也可以不帶：
+
+    範例
+    var x1=34.00;      //使用小數點來寫
+    var x2=34;         //不使用小數點來寫
+    極大或極小的數值可以透過科學（指數）計數法來書寫：
+
+    範例
+    var y=123e5;      // 12300000
+    var z=123e-5;     // 0.00123
+
+JavaScript 布林
+    布林（邏輯）只能有兩個值：true 或 false。
+    var x=true;
+    var y=false;
+
+JavaScript 陣列
+    下面的程式碼建立名為 cars 的陣列：
+
+    var cars=new Array();
+    cars[0]="Saab";
+    cars[1]="Volvo";
+    cars[2]="BMW";
+    或者 (condensed array):
+
+    var cars=new Array("Saab","Volvo","BMW");
+
+JavaScript 物件
+    物件由大括弧分隔。在括弧內部，物件的屬性以名稱和值對的形式 (name : value) 來定義。屬性由逗號分隔：
+
+    var person={firstname:"John", lastname:"Doe", id:5566};
+    上面範例中的物件 (person) 有三個屬性：firstname、lastname 以及 id。
+
+    空白和換行無關緊要。宣告可橫跨多行：
+
+    var person={
+    firstname : "John",
+    lastname  : "Doe",
+    id        :  5566
+    };
+    物件屬性有兩種定址方式：
+
+    範例
+    name=person.lastname;
+    name=person["lastname"];
+
+Undefined 和 Null
+    Undefined 這個值表示變數不含有值。
+
+    可以透過將變數的值設定為 null 來清空變數。
+
+    範例
+    cars=null;
+    person=null;
+
+宣告變數型別
+    當您宣告新變數時，可以使用關鍵詞 "new" 來宣告其型別：
+
+    var carname=new String;
+    var x=      new Number;
+    var y=      new Boolean;
+    var cars=   new Array;
+    var person= new Object;

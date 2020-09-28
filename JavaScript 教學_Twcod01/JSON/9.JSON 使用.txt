@@ -1,0 +1,36 @@
+JSON 使用
+    把 JSON 文字轉換為 JavaScript 物件
+    JSON 最常見的用法之一，是從 web 伺服器上讀取 JSON 資料（作為檔案或作為 HttpRequest），將 JSON 資料轉換為 JavaScript 物件，然後在網頁中使用該資料。
+
+    為了更簡單地為您講解，我們使用字串作為輸入進行演示（而不是檔案）。
+
+JSON 例項 - 來自字串的物件
+    建立包含 JSON 語法的 JavaScript 字串：
+
+    var txt = '{ "sites" : [' +
+    '{ "name":"線上程式語言教學練習" , "url":"www.twcode01.com" },' +
+    '{ "name":"google" , "url":"www.google.com" },' +
+    '{ "name":"微博" , "url":"www.weibo.com" } ]}';
+    由於 JSON 語法是 JavaScript 語法的子集，JavaScript 函式 eval() 可用於將 JSON 文字轉換為 JavaScript 物件。
+
+    eval() 函式使用的是 JavaScript 編譯器，可解析 JSON 文字，然後生成 JavaScript 物件。必須把文字套件圍在括弧中，這樣才能避免語法錯誤：
+
+    var obj = eval ("(" + txt + ")");
+    在網頁中使用 JavaScript 物件：
+
+    範例
+    var txt = '{ "sites" : [' +
+    '{ "name":"線上程式語言教學練習" , "url":"www.twcode01.com" },' +
+    '{ "name":"google" , "url":"www.google.com" },' +
+    '{ "name":"微博" , "url":"www.weibo.com" } ]}';
+    
+    var obj = eval ("(" + txt + ")");
+    
+    document.getElementById("name").innerHTML=obj.sites[0].name 
+    document.getElementById("url").innerHTML=obj.sites[0].url
+
+JSON 解析器
+    lamp  eval() 函式可編譯並執行任何 JavaScript 程式碼。這隱藏了一個潛在的安全問題。
+    使用 JSON 解析器將 JSON 轉換為 JavaScript 物件是更安全的做法。JSON 解析器只能識別 JSON 文字，而不會編譯指令碼。
+    在瀏覽器中，這提供了原生的 JSON 支援，而且 JSON 解析器的速度更快。
+    較新的瀏覽器和最新的 ECMAScript (JavaScript) 標準中均包含了原生的對 JSON 的支援。

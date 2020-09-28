@@ -1,0 +1,36 @@
+JavaScript 事件
+    HTML 事件是發生在 HTML 元素上的事情。
+    當在 HTML 頁面中使用 JavaScript 時， JavaScript 可以觸發這些事件。
+
+HTML 事件
+    HTML 事件可以是瀏覽器行為，也可以是使用者行為。
+    以下是 HTML 事件的例項：
+        HTML 頁面完成載入
+        HTML input 欄位改變時
+        HTML 按鈕被點選
+
+常見的HTML事件
+    下面是一些常見的HTML事件的串列:
+        事件	描述
+        onchange	HTML 元素改變
+        onclick	使用者點選 HTML 元素
+        onmouseover	使用者在一個HTML元素上移動滑鼠
+        onmouseout	使用者從一個HTML元素上移開滑鼠
+        onkeydown	使用者按下鍵盤按鍵
+        onload	瀏覽器已完成頁面的載入
+
+JavaScript 可以做什麼?
+    事件可以用於處理表單驗證，使用者輸入，使用者行為及瀏覽器動作:
+
+    頁面載入時觸發事件
+    頁面關閉時觸發事件
+    使用者點選按鈕執行動作
+    驗證使用者輸入內容的合法性
+    等等 ...
+    可以使用多種方法來執行 JavaScript 事件程式碼：
+
+    HTML 事件屬性可以直接執行 JavaScript 程式碼
+    HTML 事件屬性可以呼叫 JavaScript 函式
+    你可以為 HTML 元素指定自己的事件處理程式
+    你可以阻止事件的發生。
+    等等 ...

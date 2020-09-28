@@ -1,0 +1,24 @@
+JSON 教學
+    JSON: JavaScript Object Notation(JavaScript 物件表示法)
+    JSON 是儲存和交換文字訊息的語法。類似 XML。
+    JSON 比 XML 更小、更快，更易解析。
+
+    JSON 範例
+    {
+        "sites": [
+        { "name":"線上程式語言教學練習" , "url":"www.twcode01.com" }, 
+        { "name":"google" , "url":"www.google.com" }, 
+        { "name":"微博" , "url":"www.weibo.com" }
+        ]
+    }
+    這個 sites 物件是包含 3 個站點記錄（物件）的陣列。
+
+什麼是 JSON ？
+    JSON 指的是 JavaScript 物件表示法（JavaScript Object Notation）
+    JSON 是輕量級的文字資料交換格式
+    JSON 獨立於語言：JSON 使用 Javascript語法來描述資料物件，但是 JSON 仍然獨立於語言和平台。JSON 解析器和 JSON 庫支援許多不同的程式設計語言。 目前非常多的動態（PHP，JSP，.NET）程式設計語言都支援JSON。
+    JSON 具有自我描述性，更易理解
+    JSON - 轉換為 JavaScript 物件
+    JSON 文字格式在語法上與建立 JavaScript 物件的程式碼相同。
+
+    由於這種相似性，無需解析器，JavaScript 程式能夠使用內建的 eval() 函式，用 JSON 資料來生成原生的 JavaScript 物件。

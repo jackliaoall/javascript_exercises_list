@@ -1,0 +1,90 @@
+JSON 語法
+    JSON 語法是 JavaScript 語法的子集。
+
+JSON 語法規則
+    JSON 語法是 JavaScript 物件表示語法的子集。
+
+        資料在名稱/值對中
+        資料由逗號分隔
+        大括弧儲存物件
+        中括弧儲存陣列
+
+JSON 名稱/值對
+    JSON 資料的書寫格式是：名稱/值對。
+
+    名稱/值對包括欄位名稱（在雙引號中），後面寫一個冒號，然後是值：
+
+    "name" : "線上程式語言教學練習"
+    這很容易理解，等效於這條 JavaScript 敘述：
+
+    name = "線上程式語言教學練習"
+
+JSON 值
+    JSON 值可以是：
+
+        數值（整數或浮點數）
+        字串（在雙引號中）
+        邏輯值（true 或 false）
+        陣列（在中括弧中）
+        物件（在大括弧中）
+        null
+
+JSON 數值
+    JSON 數值可以是整型或者浮點型：
+    { "age":30 }
+
+JSON 物件
+    JSON 物件在大括弧（{}）中書寫：
+
+    物件可以包含多個名稱/值對：
+
+    { "name":"線上程式語言教學練習" , "url":"www.twcode01.com" }
+    這一點也容易理解，與這條 JavaScript 敘述等效：
+
+    name = "線上程式語言教學練習"
+    url = "www.twcode01.com"
+
+JSON 陣列
+    JSON 陣列在中括弧中書寫：
+
+    陣列可包含多個物件：
+
+    {
+    "sites": [
+    { "name":"線上程式語言教學練習" , "url":"www.twcode01.com" }, 
+    { "name":"google" , "url":"www.google.com" }, 
+    { "name":"微博" , "url":"www.weibo.com" }
+    ]
+    }
+    在上面的範例中，物件 "sites" 是包含三個物件的陣列。每個物件代表一條關於某個網站（name、url）的記錄。
+
+JSON 布林值
+    JSON 布林值可以是 true 或者 false：
+
+    { "flag":true }
+
+JSON null
+    JSON 可以設定 null 值：
+
+    { "twcode01":null }
+
+JSON 使用 JavaScript 語法
+    因為 JSON 使用 JavaScript 語法，所以無需額外的軟體就能處理 JavaScript 中的 JSON。
+
+    透過 JavaScript，您可以建立一個物件陣列，並像這樣進行賦值：
+
+    範例
+    var sites = [
+        { "name":"twcode01" , "url":"www.twcode01.com" }, 
+        { "name":"google" , "url":"www.google.com" }, 
+        { "name":"微博" , "url":"www.weibo.com" }
+    ];
+    可以像這樣存取 JavaScript 物件陣列中的第一項（索引從 0 開始）：
+
+    sites[0].name;
+    回傳的內容是：
+
+    twcode01
+    可以像這樣修改資料：
+
+    sites[0].name="線上程式語言教學練習";

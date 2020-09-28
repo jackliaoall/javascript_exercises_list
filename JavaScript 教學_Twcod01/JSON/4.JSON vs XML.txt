@@ -1,0 +1,56 @@
+JSON vs XML
+    JSON 和 XML 都用於接收 web 伺服端的資料。
+    JSON 和 XML在寫法上有所不同，如下所示：
+
+    JSON 範例
+    {
+        "sites": [
+        { "name":"線上程式語言教學練習" , "url":"www.twcode01.com" }, 
+        { "name":"google" , "url":"www.google.com" }, 
+        { "name":"微博" , "url":"www.weibo.com" }
+        ]
+    }
+    XML 範例
+    <sites>
+    <site>
+        <name>線上程式語言教學練習</name> <url>www.twcode01.com</url>
+    </site>
+    <site>
+        <name>google</name> <url>www.google.com</url>
+    </site>
+    <site>
+        <name>微博</name> <url>www.weibo.com</url>
+    </site>
+    </sites>
+    JSON 與 XML 的相同之處：
+
+    JSON 和 XML 資料都是 "自我描述" ，都易於理解。
+    JSON 和 XML 資料都是有層次的結構
+    JSON 和 XML 資料可以被大多數程式設計語言使用
+    JSON 與 XML 的不同之處：
+    JSON 不需要結束標籤
+    JSON 更加簡短
+    JSON 讀寫速度更快
+    JSON 可以使用陣列
+    最大的不同是：XML 需要使用 XML 解析器來解析，JSON 可以使用標準的 JavaScript 函式來解析。
+
+    JSON.parse(): 將一個 JSON 字串轉換為 JavaScript 物件。
+    JSON.stringify(): 於將 JavaScript 值轉換為 JSON 字串。
+
+為什麼 JSON 比 XML 更好？
+    XML 比 JSON 更難解析。
+
+    JSON 可以直接使用現有的 JavaScript 物件解析。
+
+    針對 AJAX 應用，JSON 比 XML 資料載入更快，而且更簡單：
+
+    使用 XML
+
+        取得 XML 檔案
+        使用 XML DOM 迭代迴圈檔案
+        接資料解析出來複制給變數
+
+    使用 JSON
+
+        取得 JSON 字串
+        JSON.Parse 解析 JSON 字串

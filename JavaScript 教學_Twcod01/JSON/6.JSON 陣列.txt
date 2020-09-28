@@ -1,0 +1,73 @@
+JSON 陣列
+    陣列作為 JSON 物件
+    範例
+    [ "Google", "Twcode01", "Taobao" ]
+    JSON 陣列在中括弧中書寫。
+
+    JSON 中陣列值必須是合法的 JSON 資料型態（字串, 數值, 物件, 陣列, 布林值或 null）。
+
+    JavaScript 中，陣列值可以是以上的 JSON 資料型態，也可以是 JavaScript 的運算式，包括函式，日期，及 undefined。
+
+JSON 物件中的陣列
+    物件屬性的值可以是一個陣列：
+
+    範例
+    {
+    "name":"網站",
+    "num":3,
+    "sites":[ "Google", "Twcode01", "Taobao" ]
+    }
+    我們可以使用索引值來存取陣列：
+
+    範例
+    x = myObj.sites[0];
+
+迴圈陣列
+    你可以使用 for-in 來存取陣列：
+
+    範例
+    for (i in myObj.sites) {
+        x += myObj.sites[i] + "<br>";
+    }
+
+    你也可以使用 for 迴圈：
+
+    範例
+    for (i = 0; i < myObj.sites.length; i++) {
+        x += myObj.sites[i] + "<br>";
+    }
+
+巢狀 JSON 物件中的陣列
+    JSON 物件中陣列可以包含另外一個陣列，或者另外一個 JSON 物件：
+
+    範例
+    myObj = {
+        "name":"網站",
+        "num":3,
+        "sites": [
+            { "name":"Google", "info":[ "Android", "Google 搜尋", "Google 翻譯" ] },
+            { "name":"Twcode01", "info":[ "線上程式語言教學練習", "程式開發工具", "菜鳥微信" ] },
+            { "name":"Taobao", "info":[ "淘寶", "網購" ] }
+        ]
+    }
+    我們可以使用 for-in 來迴圈存取每個陣列：
+
+    範例
+    for (i in myObj.sites) {
+        x += "<h1>" + myObj.sites[i].name + "</h1>";
+        for (j in myObj.sites[i].info) {
+            x += myObj.sites[i].info[j] + "<br>";
+        }
+    }
+
+修改陣列值
+    你可以使用索引值來修改陣列值：
+
+    範例
+    myObj.sites[1] = "Github";
+
+    刪除陣列元素
+    我們可以使用 delete 關鍵字來刪除陣列元素：
+
+    範例
+    delete myObj.sites[1];

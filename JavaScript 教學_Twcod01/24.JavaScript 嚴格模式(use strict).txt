@@ -1,0 +1,39 @@
+JavaScript 嚴格模式（strict mode）即在嚴格的條件下執行。
+
+使用 "use strict" 指令
+    "use strict" 指令在 JavaScript 1.8.5 (ECMAScript5) 中新增。
+    它不是一條敘述，但是是一個字面量運算式，在 JavaScript 舊版本中會被忽略。
+    "use strict" 的目的是指定程式碼在嚴格條件下執行。
+    嚴格模式下你不能使用未宣告的變數。
+
+嚴格模式宣告
+    嚴格模式透過在指令碼或函式的頭部新增 "use strict"; 運算式來宣告。
+
+    "use strict";
+    x = 3.14;       // 報錯 (x 未定義)
+
+    範例
+    "use strict";
+    myFunction();
+
+    function myFunction() {
+        y = 3.14;   // 報錯 (y 未定義)
+    }
+
+    在函式內部宣告是區域作用域 (只在函式內使用嚴格模式):
+
+    範例
+    x = 3.14;       // 不報錯
+    myFunction();
+
+    function myFunction() {
+    "use strict";
+        y = 3.14;   // 報錯 (y 未定義)
+    }
+
+    為什麼使用嚴格模式:
+
+    消除Javascript語法的一些不合理、不嚴謹之處，減少一些怪異行為;
+    消除程式碼執行的一些不安全之處，保證程式碼執行的安全；
+    提高編譯器效率，增加執行速度；
+    為未來新版本的Javascript做好鋪墊。

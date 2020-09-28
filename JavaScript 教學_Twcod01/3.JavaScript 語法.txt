@@ -1,0 +1,26 @@
+JavaScript 語法
+    JavaScript 是一個腳本程式語言。
+    它是一個輕量級，但功能強大的程式設計語言
+
+JavaScript 字面量
+    (1)數值（Number）
+    3.14
+    1001
+    123e5
+
+    (2)字串（String）字面量 可以使用單引號或雙引號:
+    "John Doe"
+    'John Doe'
+
+    (3)運算式字面量 用於計算：
+    5 + 6
+    5 * 10
+
+    (4)陣列（Array）字面量 定義一個陣列：
+    [40, 100, 1, 5, 25, 10]
+
+    (5)物件（Object）字面量 定義一個物件：
+    {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}
+
+    (6)函式（Function）字面量 定義一個函式：
+    function myFunction(a, b) { return a * b;}

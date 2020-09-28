@@ -1,0 +1,160 @@
+函式宣告
+    在之前的教學中，你已經了解了函式宣告的語法 :
+
+    function functionName(parameters) {
+    執行的程式碼
+    }
+    函式宣告後不會立即執行，會在我們需要的時候呼叫到。
+
+    範例
+    function myFunction(a, b) {
+        return a * b;
+    }
+
+函數表示式
+    JavaScript 函式可以透過一個運算式定義。
+
+    函數表示式可以儲存在變數中：
+
+    範例
+    var x = function (a, b) {return a * b};
+
+    在函數表示式儲存在變數後，變數也可作為一個函式使用：
+
+    範例
+    var x = function (a, b) {return a * b};
+    var z = x(4, 3);
+
+    以上函式實際上是一個 匿名函式 (函式沒有名稱)。
+
+    函式儲存在變數中，不需要函式名稱，通常透過變數名來呼叫。
+
+Function() 建構函式
+    在以上例項中，我們了解到函式透過關鍵字 function 定義。
+
+    函式同樣可以透過內建的 JavaScript 函式構造器（Function()）定義。
+
+    範例
+    var myFunction = new Function("a", "b", "return a * b");
+
+    var x = myFunction(4, 3);
+
+    實際上，你不必使用建構函式。上面例項可以寫成：
+
+    範例
+    var myFunction = function (a, b) {return a * b};
+
+    var x = myFunction(4, 3);
+
+函式提升（Hoisting）
+    在之前的教學中我們已經了解了 "hoisting(提升)"。
+
+    提升（Hoisting）是 JavaScript 預設將當前作用域提升到前面去的的行為。
+
+    提升（Hoisting）應用在變數的宣告與函式的宣告。
+
+    因此，函式可以在宣告之前呼叫：
+
+    myFunction(5);
+
+    function myFunction(y) {
+        return y * y;
+    }
+    使用運算式定義函式時無法提升。
+
+自呼叫函式
+    函數表示式可以 "自呼叫"。
+
+    自呼叫運算式會自動呼叫。
+
+    如果運算式後面緊跟 () ，則會自動呼叫。
+
+    不能自呼叫宣告的函式。
+
+    透過新增括弧，來說明它是一個函數表示式：
+
+    範例
+    (function () {
+        var x = "Hello!!";      // 我將呼叫自己
+    })();
+
+函式可作為一個值使用
+    JavaScript 函式作為一個值使用：
+
+    範例
+    function myFunction(a, b) {
+        return a * b;
+    }
+
+    var x = myFunction(4, 3);
+
+    JavaScript 函式可作為運算式使用：
+
+    範例
+    function myFunction(a, b) {
+        return a * b;
+    }
+
+    var x = myFunction(4, 3) * 2;
+
+函式是物件
+    在 JavaScript 中使用 typeof 運算子判斷函式型別將回傳 "function" 。
+
+    但是JavaScript 函式描述為一個物件更加準確。
+
+    JavaScript 函式有 屬性 和 方法。
+
+    arguments.length 屬性回傳函式呼叫過程接收到的引數個數：
+
+    範例
+    function myFunction(a, b) {
+        return arguments.length;
+    }
+
+    線上執行
+    toString() 方法將函式作為一個字串回傳:
+
+    範例
+    function myFunction(a, b) {
+        return a * b;
+    }
+
+    var txt = myFunction.toString();
+
+箭頭函式
+    ES6 新增了箭頭函式。
+
+    箭頭函數表示式的語法比普通函數表示式更簡潔。
+
+    (引數1, 引數2, …, 引數N) => { 函式宣告 }
+
+    (引數1, 引數2, …, 引數N) => 運算式(單一)
+    // 相當於：(引數1, 引數2, …, 引數N) =>{ return 運算式; }
+    當只有一個引數時，圓括弧是可選的：
+
+    (單一引數) => {函式宣告}
+    單一引數 => {函式宣告}
+    沒有引數的函式應該寫成一對圓括弧:
+
+    () => {函式宣告}
+    範例
+    // ES5
+    var x = function(x, y) {
+        return x * y;
+    }
+    
+    // ES6
+    const x = (x, y) => x * y;
+
+    有的箭頭函式都沒有自己的 this。 不適合頂一個 物件的方法。
+
+    當我們使用箭頭函式的時候，箭頭函式會預設幫我們繫結外層 this 的值，所以在箭頭函式中 this 的值和外層的 this 是一樣的。
+
+    箭頭函式是不能提升的，所以需要在使用之前定義。
+
+    使用 const 比使用 var 更安全，因為函數表示式始終是一個常量。
+
+    如果函式部分只是一個敘述，則可以省略 return 關鍵字和大括弧 {}，這樣做是一個比較好的習慣:
+
+    範例
+    const x = (x, y) => { return x * y };

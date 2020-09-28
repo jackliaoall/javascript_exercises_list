@@ -1,0 +1,29 @@
+JavaScript 物件
+    JavaScript 物件是擁有屬性和方法的資料。
+
+物件定義
+    你可以使用字元來定義和建立 JavaScript 物件:
+
+    範例
+    var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+    定義 JavaScript 物件可以跨越多行，空白跟換行不是必須的：
+
+    範例
+    var person = {
+        firstName:"John",
+        lastName:"Doe",
+        age:50,
+        eyeColor:"blue"
+    };
+
+存取物件屬性
+    你可以透過兩種方式存取物件屬性:
+
+    範例 1
+    person.lastName;
+
+    線上執行
+
+    範例 2
+    person["lastName"];

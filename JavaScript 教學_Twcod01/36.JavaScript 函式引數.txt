@@ -1,0 +1,105 @@
+JavaScript 函式引數
+    JavaScript 函式對引數的值沒有進行任何的檢查。
+
+函式顯式引數(Parameters)與隱式引數(Arguments)
+    在先前的教學中，我們已經學習了函式的顯式引數:
+
+    functionName(parameter1, parameter2, parameter3) {
+        // 要執行的程式碼……
+    }
+    函式顯式引數在函式定義時列出。
+
+    函式隱式引數在函式呼叫時傳遞給函式真正的值。
+
+引數規則
+    JavaScript 函式定義顯式引數時沒有指定資料型態。
+    JavaScript 函式對隱式引數沒有進行型別檢測。
+    JavaScript 函式對隱式引數的個數沒有進行檢測。
+
+預設引數
+    ES5 中如果函式在呼叫時未提供隱式引數，引數會預設設定為： undefined
+
+    有時這是可以接受的，但是建議最好為引數設定一個預設值：
+
+    範例(ES5)
+    function myFunction(x, y) {
+        if (y === undefined) {
+            y = 0;
+        } 
+    }
+
+    或者，更簡單的方式：
+
+    範例(ES5)
+    function myFunction(x, y) {
+        y = y || 0;
+    }
+
+    Note	如果y已經定義 ， y || 回傳 y, 因為 y 是 true, 否則回傳 0, 因為 undefined 為 false。
+    如果函式呼叫時設定了過多的引數，引數將無法被引用，因為無法找到對應的引數名。 只能使用 arguments 物件來呼叫。
+
+ES6 函式可以自帶引數
+    ES6 支援函式帶有預設引數，就判斷 undefined 和 || 的操作：
+
+    範例（ES6）
+    function myFunction(x, y = 10) {
+        // y is 10 if not passed or undefined
+        return x + y;
+    }
+    
+    myFunction(0, 2) // 輸出 2
+    myFunction(5); // 輸出 15, y 引數的預設值
+
+arguments 物件
+    JavaScript 函式有個內建的物件 arguments 物件。
+
+    argument 物件包含了函式呼叫的引數陣列。
+
+    透過這種方式你可以很方便的找到最大的一個引數的值：
+
+    範例
+    x = findMax(1, 123, 500, 115, 44, 88);
+    
+    function findMax() {
+        var i, max = arguments[0];
+        
+        if(arguments.length < 2) return max;
+    
+        for (i = 0; i < arguments.length; i++) {
+            if (arguments[i] > max) {
+                max = arguments[i];
+            }
+        }
+        return max;
+    }
+
+    或者建立一個函式用來統計所有數值的和：
+
+    範例
+    x = sumAll(1, 123, 500, 115, 44, 88);
+    
+    function sumAll() {
+        var i, sum = 0;
+        for (i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+        }
+        return sum;
+    }
+
+透過值傳遞引數
+    在函式中呼叫的引數是函式的隱式引數。
+
+    JavaScript 隱式引數透過值來傳遞：函式僅僅只是取得值。
+
+    如果函式修改引數的值，不會修改顯式引數的初始值（在函式外定義）。
+
+    隱式引數的改變在函式外是不可見的。
+
+透過物件傳遞引數
+    在JavaScript中，可以引用物件的值。
+
+    因此我們在函式內部修改物件的屬性就會修改其初始的值。
+
+    修改物件屬性可作用於函式外部（全域變數）。
+
+    修改物件屬性在函式外是可見的。

@@ -1,0 +1,47 @@
+typeof 運算子
+    你可以使用 typeof 運算子來檢測變數的資料型態。
+
+    範例
+    typeof "John"                // 回傳 string
+    typeof 3.14                  // 回傳 number
+    typeof false                 // 回傳 boolean
+    typeof [1,2,3,4]             // 回傳 object
+    typeof {name:'John', age:34} // 回傳 object
+
+null
+    在 JavaScript 中 null 表示 "什麼都沒有"。
+
+    null是一個只有一個值的特殊型別。表示一個空物件引用。
+
+    Note	用 typeof 檢測 null 回傳是object。
+    你可以設定為 null 來清空物件:
+
+    範例
+    var person = null;           // 值為 null(空), 但型別為物件
+
+    你可以設定為 undefined 來清空物件:
+
+    範例
+    var person = undefined;     // 值為 undefined, 型別為 undefined
+
+undefined
+    在 JavaScript 中, undefined 是一個沒有設定值的變數。
+
+    typeof 一個沒有值的變數會回傳 undefined。
+
+    範例
+    var person;                  // 值為 undefined(空), 型別是undefined
+
+    任何變數都可以透過設定值為 undefined 來清空。 型別為 undefined.
+
+    範例
+    person = undefined;          // 值為 undefined, 型別是undefined
+
+undefined 和 null 的區別
+    範例
+    null 和 undefined 的值相等，但型別不等：
+
+    typeof undefined             // undefined
+    typeof null                  // object
+    null === undefined           // false
+    null == undefined            // true
